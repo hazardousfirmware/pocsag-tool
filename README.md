@@ -14,5 +14,7 @@ Can be used for other Software Defined Radio protocols, not just POCSAG
 
 ## Example usage
 ```sh
-./pocsag -a 4444 -m "Broadcast this on hackrf and receive it on your pager" -f - | ./bin2audio -i - -o example.wav
+./pocsag -a 4444 -m "Broadcast this on hackrf" -f - | ./bin2audio -i - -o example.wav
+
+cat example.wav | sox -t raw -esigned-integer -b16 -r 48000 - -esigned-integer -b16 -r 22050 -t raw - | multimon-ng -t raw  -a POCSAG1200 -
 ```
