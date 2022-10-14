@@ -18,3 +18,8 @@ Can be used for other Software Defined Radio protocols, not just POCSAG
 
 cat example.wav | sox -t raw -esigned-integer -b16 -r 48000 - -esigned-integer -b16 -r 22050 -t raw - | multimon-ng -t raw  -a POCSAG1200 -
 ```
+
+## Legal
+This software contains code that transmits radio signals. POCSAG / pager messages are used by emergency services, Do not interfere with them. Do not broadcast on illegal frequencies.
+
+For educational purpose only.
